@@ -1,3 +1,2 @@
 drizzle/
 *.db
-.env.secret
