@@ -4,10 +4,10 @@ import { randomUUID } from 'node:crypto'
 
 export const db = drizzle(process.env.DB_FILE_NAME!)
 
-await db.insert(example).values({
-  data: randomUUID(),
-  otherData: randomUUID(),
-})
+// await db.insert(example).values({
+//   data: randomUUID(),
+//   otherData: randomUUID(),
+// })
 
-const result = await db.select().from(example).all()
-console.log(result)
+// const result = await db.select().from(example).all()
+// console.log(result)
