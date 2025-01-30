@@ -33,4 +33,5 @@
   "prettier.endOfLine": "auto",
   "prettier.singleQuote": true,
   "editor.formatOnSave": true,
+  "tailwindCSS.experimental.configFile": "./apps/client/src/assets/main.css"
 }
