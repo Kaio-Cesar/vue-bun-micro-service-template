@@ -3,9 +3,14 @@
   "version": "0.0.1",
   "description": "",
   "scripts": {
-    
+    "dev": "turbo dev",
+    "build": "turbo build"
   },
   "keywords": [],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "turbo": "^2.3.4"
+  },
+  "packageManager": "pnpm@9.15.4"
 }
