@@ -1,0 +1,3 @@
+drizzle/
+*.db
+.env.secret

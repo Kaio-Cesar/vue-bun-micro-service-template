@@ -3,19 +3,24 @@
   "version": "1.0.0",
   "description": "",
   "main": "src/index.ts",
+  "type": "module",
   "scripts": {
     "dev": "bun --watch src/index.ts",
-    "build": "bun build src/index.ts"
+    "build": "bun build src/index.ts",
+    "migrate": "drizzle-kit push"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "catalog:",
     "@types/bun": "^1.2.1",
-    "typescript": "catalog:",
-    "@vue-micro-service-template/typescript": "workspace:*"
+    "@types/node": "catalog:",
+    "@vue-micro-service-template/typescript": "workspace:*",
+    "better-sqlite3": "^11.8.1",
+    "drizzle-kit": "^0.30.4",
+    "typescript": "catalog:"
   },
   "dependencies": {
+    "drizzle-orm": "^0.39.1"
   }
 }

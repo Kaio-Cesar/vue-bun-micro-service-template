@@ -1,3 +1,6 @@
 {
   "extends": "@vue-micro-service-template/typescript/tsconfig.node.json",
+  "compilerOptions": {
+    "types": ["bun"]
+  }
 }
