@@ -1,0 +1,9 @@
+{
+  "name": "@vue-micro-service-template/typescript",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@tsconfig/node22": "^22.0.0",
+    "@types/node": "catalog:"
+  }
+}
