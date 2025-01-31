@@ -6,9 +6,15 @@ settings:
 
 catalogs:
   default:
+    '@tailwindcss/vite':
+      specifier: ^4.0.1
+      version: 4.0.1
     '@types/node':
       specifier: ^22.10.7
       version: 22.12.0
+    tailwindcss:
+      specifier: ^4.0.1
+      version: 4.0.1
     typescript:
       specifier: ~5.7.3
       version: 5.7.3
@@ -24,16 +30,19 @@ importers:
   apps/client:
     dependencies:
       '@tailwindcss/vite':
-        specifier: ^4.0.1
+        specifier: 'catalog:'
         version: 4.0.1(vite@6.0.11(@types/node@22.12.0)(jiti@2.4.2)(lightningcss@1.29.1))
       better-auth:
         specifier: ^1.1.15
         version: 1.1.15
+      ideais-ui-kit:
+        specifier: workspace:../../packages/ideas-ui-kit
+        version: link:../../packages/ideas-ui-kit
       pinia:
         specifier: ^2.3.1
         version: 2.3.1(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3))
       tailwindcss:
-        specifier: ^4.0.1
+        specifier: 'catalog:'
         version: 4.0.1
       vue:
         specifier: ^3.5.13
@@ -112,6 +121,58 @@ importers:
       typescript:
         specifier: 'catalog:'
         version: 5.7.3
+
+  packages/ideas-ui-kit:
+    dependencies:
+      '@tailwindcss/vite':
+        specifier: 'catalog:'
+        version: 4.0.1(vite@6.0.11(@types/node@22.12.0)(jiti@2.4.2)(lightningcss@1.29.1))
+      tailwindcss:
+        specifier: 'catalog:'
+        version: 4.0.1
+      vue:
+        specifier: ^3.5.13
+        version: 3.5.13(typescript@5.7.3)
+    devDependencies:
+      '@types/jsdom':
+        specifier: ^21.1.7
+        version: 21.1.7
+      '@types/node':
+        specifier: 'catalog:'
+        version: 22.12.0
+      '@vitejs/plugin-vue':
+        specifier: ^5.2.1
+        version: 5.2.1(vite@6.0.11(@types/node@22.12.0)(jiti@2.4.2)(lightningcss@1.29.1))(vue@3.5.13(typescript@5.7.3))
+      '@vue-micro-service-template/typescript':
+        specifier: workspace:*
+        version: link:../typescript
+      '@vue/test-utils':
+        specifier: ^2.4.6
+        version: 2.4.6
+      '@vue/tsconfig':
+        specifier: ^0.7.0
+        version: 0.7.0(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3))
+      jsdom:
+        specifier: ^26.0.0
+        version: 26.0.0
+      npm-run-all2:
+        specifier: ^7.0.2
+        version: 7.0.2
+      typescript:
+        specifier: 'catalog:'
+        version: 5.7.3
+      vite:
+        specifier: ^6.0.11
+        version: 6.0.11(@types/node@22.12.0)(jiti@2.4.2)(lightningcss@1.29.1)
+      vite-plugin-vue-devtools:
+        specifier: ^7.7.0
+        version: 7.7.1(rollup@4.32.1)(vite@6.0.11(@types/node@22.12.0)(jiti@2.4.2)(lightningcss@1.29.1))(vue@3.5.13(typescript@5.7.3))
+      vitest:
+        specifier: ^3.0.2
+        version: 3.0.4(@types/node@22.12.0)(jiti@2.4.2)(jsdom@26.0.0)(lightningcss@1.29.1)
+      vue-tsc:
+        specifier: ^2.2.0
+        version: 2.2.0(typescript@5.7.3)
 
   packages/typescript:
     dependencies:

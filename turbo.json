@@ -4,6 +4,9 @@
     "build": {
       "outputs": ["dist/**"]
     },
+    "ui:build": {
+      "outputs": ["dist/**"]
+    },
     "dev": {
       "persistent": true,
       "cache": false

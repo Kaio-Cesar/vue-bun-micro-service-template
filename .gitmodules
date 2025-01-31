@@ -1,0 +1,3 @@
+[submodule "packages/ideas-ui-kit"]
+	path = packages/ideas-ui-kit
+	url = https://github.com/Kaio-Cesar/ideias-ui-kit.git
