@@ -3,7 +3,6 @@ import { cors } from 'hono/cors'
 import { auth } from '../auth/better_auth'
 
 const app = new Hono()
-app.get('/', c => c.text('Hello Bun!'))
 
 app.use(
   '/api/auth/**',

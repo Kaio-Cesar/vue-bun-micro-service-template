@@ -2,7 +2,8 @@
   "$schema": "https://turbo.build/schema.json",
   "tasks": {
     "build": {
-      "outputs": ["dist/**"]
+      "outputs": ["dist/**"],
+      "dependsOn": ["ui:build"]
     },
     "ui:build": {
       "outputs": ["dist/**"]
@@ -14,6 +15,11 @@
     "migrate": {
       "persistent": false,
       "cache": false
+    },
+    "prod": {
+      "persistent": true,
+      "dependsOn": ["build"]
     }
   }
+  
 }

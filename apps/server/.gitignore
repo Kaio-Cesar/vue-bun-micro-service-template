@@ -1,2 +1,4 @@
 drizzle/
 *.db
+.env
+data/
