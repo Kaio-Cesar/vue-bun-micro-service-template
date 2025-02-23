@@ -4,4 +4,5 @@ export const example = sqliteTable('example', {
   id: integer().primaryKey({ autoIncrement: true }),
   data: text(),
   otherData: text(),
+  anotherData: text(),
 })

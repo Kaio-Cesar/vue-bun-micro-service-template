@@ -3,16 +3,18 @@
   "tasks": {
     "build": {
       "outputs": ["dist/**"],
-      "dependsOn": ["ui:build"]
+      "dependsOn": ["^build"],
+      "cache": true
     },
     "ui:build": {
-      "outputs": ["dist/**"]
+      "outputs": ["dist/**"],
+      "cache": false
     },
     "dev": {
       "persistent": true,
       "cache": false
     },
-    "migrate": {
+    "generate": {
       "persistent": false,
       "cache": false
     },

@@ -7,8 +7,11 @@
   "scripts": {
     "dev": "bun --watch src/main.ts",
     "build": "bun ./build.ts",
-    "migrate": "bun ./src/db/setup.ts && bunx drizzle-kit push --config=drizzle.config.ts",
-    "prod": "bun dist/main.js"
+    "setup": "bun ./src/setup.ts",
+    "db:push": "bun ./src/db/setup.ts && bunx drizzle-kit push --config=drizzle.config.ts",
+    "db:generate": "bunx drizzle-kit generate --config=drizzle.config.ts",
+    "db:migrate": "bunx drizzle-kit migrate --config=drizzle.config.ts",
+    "prod": "bun dist/setup.js && bun dist/main.js"
   },
   "keywords": [],
   "author": "",
@@ -25,6 +28,8 @@
     "@vue-micro-service-template/utils": "workspace:*",
     "better-auth": "^1.1.15",
     "drizzle-orm": "^0.39.1",
-    "hono": "^4.6.19"
+    "hono": "^4.6.19",
+    "ora": "^8.2.0",
+    "picocolors": "^1.1.1"
   }
 }
