@@ -29,3 +29,8 @@ WORKDIR /prod/server
 EXPOSE 3000
 CMD ["bun", "run", "prod"]
 
+FROM nginx:stable-alpine AS client
+COPY --from=build /prod/client/nginx.conf /usr/share/nginx/conf.d
+COPY --from=build /prod/client/dist /usr/share/nginx/html
+EXPOSE 8080
+CMD ["nginx", "-g", "daemon off;"] 
