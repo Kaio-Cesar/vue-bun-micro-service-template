@@ -12,6 +12,7 @@ export const useAuthStore = defineStore('auth', () => {
       email: signupData.email,
       name: signupData.name,
       password: signupData.password,
+      callbackURL: '/home',
     })
 
     console.log(data)
@@ -22,6 +23,7 @@ export const useAuthStore = defineStore('auth', () => {
     const { data, error } = await authClient.signIn.email({
       email: signinData.email,
       password: signinData.password,
+      callbackURL: '/home',
     })
 
     console.log(data)
@@ -35,15 +37,18 @@ export const useAuthStore = defineStore('auth', () => {
     console.log(error)
   }
 
-  const getSession = () => {
-    const session = authClient.useSession()
-    console.log(session.value)
+  const getSession = async () => {
+    const session = await authClient.getSession()
     return session
   }
 
-  const getIsSignedIn = () => {
-    const result = getSession().value.data == null || undefined ? false : true
-    return result
+  const getIsSignedIn = async () => {
+    const session = await getSession()
+    if (session.data !== null && session.data !== undefined) {
+      return true
+    } else {
+      return false
+    }
   }
 
   return { signIn, signUp, signOut, getSession, getIsSignedIn }

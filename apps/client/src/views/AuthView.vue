@@ -51,7 +51,7 @@ const signData = reactive({
 })
 
 onBeforeMount(async () => {
-  hasSession.value = authStore.getIsSignedIn()
+  hasSession.value = await authStore.getIsSignedIn()
 })
 
 const hasSession = ref(false)
@@ -60,15 +60,15 @@ const isSignup = ref(false)
 const signInUp = async () => {
   if (isSignup.value) {
     await authStore.signUp(signData)
-    hasSession.value = authStore.getIsSignedIn()
+    hasSession.value = await authStore.getIsSignedIn()
   } else {
     await authStore.signIn(signData)
-    hasSession.value = authStore.getIsSignedIn()
+    hasSession.value = await authStore.getIsSignedIn()
   }
 }
 
 const signOut = async () => {
   await authStore.signOut()
-  hasSession.value = authStore.getIsSignedIn()
+  hasSession.value = await authStore.getIsSignedIn()
 }
 </script>
